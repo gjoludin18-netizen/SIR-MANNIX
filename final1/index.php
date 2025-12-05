@@ -1,0 +1,219 @@
+<?php // index.php ?> 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cup of Comfort — Home</title>
+  <link rel="icon" href="logo.svg">
+
+  <style>
+    :root{
+      --accent:#8B5E3C;
+      --bg:#fbf8f6;
+      --text:#3a2b23;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Segoe UI', Roboto, Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* HERO SECTION */
+    .hero{
+      min-height:120vh;
+      background:url('coffee-bg.jpg') center/cover no-repeat;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      width: 1220px;
+      margin: 300px;
+      
+    }
+
+    .hero::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.40);
+    }
+
+    .hero-inner{
+      position:relative;
+      text-align:center;
+      color:#fff;
+      padding:20px;
+      max-width:600px;
+    }
+
+    .hero .logo{
+      width:120px;
+      margin:0 auto 10px;
+      display:block;
+    }
+
+    .hero h1{
+      font-size:42px;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    .hero p{
+      font-size:16px;
+      line-height:1.4;
+      margin-bottom:16px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 20px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    /* FEATURE CARDS */
+    .features{
+      max-width:1100px;
+      margin:40px auto;
+      padding:20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#fff;
+      padding:20px;
+      border-radius:14px;
+      text-align:center;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .card img{
+      width:70px;
+      height:70px;
+      object-fit:contain;
+      margin-bottom:10px;
+    }
+
+    .card h3{
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#555;
+      line-height:1.4;
+    }
+
+    /* FOOTER */
+    .footer{
+      margin-top:40px;
+      padding:25px;
+      background:#fff;
+      text-align:center;
+      color:#6b5a50;
+      font-size:14px;
+    }
+
+    /* 📱 MOBILE OPTIMIZATION */
+    @media (max-width:600px){
+
+      .hero{
+        padding:15px;
+        min-height:75vh;
+      }
+
+      .hero .logo{
+        width:90px;
+      }
+
+      .hero h1{
+        font-size:28px;
+      }
+
+      .hero p{
+        font-size:14px;
+        margin-bottom:12px;
+      }
+
+      .btn{
+        padding:10px 18px;
+        font-size:14px;
+      }
+
+      .features{
+        grid-template-columns:1fr; /* single column on phone */
+        padding:10px;
+      }
+
+      .card{
+        padding:16px;
+      }
+
+      .card img{
+        width:60px;
+        height:60px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <?php include 'nav.php'; ?>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <img src="logo.svg" class="logo" alt="Cup of Comfort logo">
+        <h1>Cup Of Comfort</h1>
+        <p>Freshly brewed coffee, homemade pastries, and warm moments — your daily comfort in every cup.</p>
+        <a class="btn" href="order.php">Order Now</a>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      
+      <div class="card">
+        <img src="coffee-icon.png">
+        <h3>Quality Coffee</h3>
+        <p>Ethically sourced beans roasted locally and brewed to order.</p>
+      </div>
+
+      <div class="card">
+        <img src="cake-icon.png">
+        <h3>Fresh Pastries</h3>
+        <p>Daily baked pastries and cakes — the perfect companion to your coffee.</p>
+      </div>
+
+      <div class="card">
+        <img src="event-icon.png">
+        <h3>Community Events</h3>
+        <p>Cozy space for small events, study groups, and meetups.</p>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; <?php echo date('Y'); ?> Cup Of Comfort — All rights reserved.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
