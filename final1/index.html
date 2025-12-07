@@ -1,221 +1,108 @@
-<?php // index.php ?> 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cup of Comfort — Home</title>
-  <link rel="icon" href="logo.svg">
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
 
-  <style>
-    :root{
-      --accent:#8B5E3C;
-      --bg:#fbf8f6;
-      --text:#3a2b23;
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-inner .logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    margin: 10px 0;
+  }
+
+  .hero p {
+    font-size: 16px;
+    max-width: 350px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    background: #644117;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  /* FEATURES */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background: #f3f3f3;
+    font-size: 14px;
+  }
+
+  /* 📱 MOBILE RESPONSIVE FIX */
+  @media(max-width: 600px) {
+
+    .hero {
+      padding: 30px 15px;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box;}
-
-    body{
-      font-family:'Segoe UI', Roboto, Arial;
-      background:var(--bg);
-      color:var(--text);
+    .hero-inner .logo {
+      width: 90px;
     }
 
-    /* HERO SECTION */
-    .hero{
-      min-height:120vh;
-      background:url('coffee-bg.jpg') center/cover no-repeat;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-      width: 1220px;
-      margin: 300px;
-      
+    .hero h1 {
+      font-size: 26px;
     }
 
-    .hero::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.40);
+    .hero p {
+      font-size: 14px;
     }
 
-    .hero-inner{
-      position:relative;
-      text-align:center;
-      color:#fff;
-      padding:20px;
-      max-width:600px;
+    .btn {
+      padding: 10px 18px;
+      font-size: 14px;
     }
 
-    .hero .logo{
-      width:120px;
-      margin:0 auto 10px;
-      display:block;
+    .features {
+      grid-template-columns: 1fr; /* single column */
+      padding: 15px;
     }
 
-    .hero h1{
-      font-size:42px;
-      font-weight:800;
-      margin-bottom:8px;
+    .card {
+      padding: 16px;
     }
 
-    .hero p{
-      font-size:16px;
-      line-height:1.4;
-      margin-bottom:16px;
+    .card img {
+      width: 60px;
+      height: 60px;
     }
-
-    .btn{
-      display:inline-block;
-      padding:12px 20px;
-      background:var(--accent);
-      color:#fff;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    /* FEATURE CARDS */
-    .features{
-      max-width:1100px;
-      margin:40px auto;
-      padding:20px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-      gap:20px;
-    }
-
-    .card{
-      background:#fff;
-      padding:20px;
-      border-radius:14px;
-      text-align:center;
-      box-shadow:0 4px 16px rgba(0,0,0,0.08);
-    }
-
-    .card img{
-      width:70px;
-      height:70px;
-      object-fit:contain;
-      margin-bottom:10px;
-    }
-
-    .card h3{
-      font-size:18px;
-      margin-bottom:6px;
-    }
-
-    .card p{
-      font-size:14px;
-      color:#555;
-      line-height:1.4;
-    }
-
-    /* FOOTER */
-    .footer{
-      margin-top:40px;
-      padding:25px;
-      background:#fff;
-      text-align:center;
-      color:#6b5a50;
-      font-size:14px;
-    }
-
-    /* 📱 MOBILE OPTIMIZATION */
-    @media (max-width:600px){
-
-      .hero{
-        padding:15px;
-        min-height:75vh;
-      }
-
-      .hero .logo{
-        width:90px;
-      }
-
-      .hero h1{
-        font-size:28px;
-      }
-
-      .hero p{
-        font-size:14px;
-        margin-bottom:12px;
-      }
-
-      .btn{
-        padding:10px 18px;
-        font-size:14px;
-      }
-
-      .features{
-        grid-template-columns:1fr; /* single column on phone */
-        padding:10px;
-      }
-
-      .card{
-        padding:16px;
-      }
-
-      .card img{
-        width:60px;
-        height:60px;
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <?php include 'nav.php'; ?>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <img src="logo.svg" class="logo" alt="Cup of Comfort logo">
-        <h1>Cup Of Comfort</h1>
-        <p>Freshly brewed coffee, homemade pastries, and warm moments — your daily comfort in every cup.</p>
-        <a class="btn" href="order.php">Order Now</a>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="features">
-      
-      <div class="card">
-        <img src="coffee-icon.png">
-        <h3>Quality Coffee</h3>
-        <p>Ethically sourced beans roasted locally and brewed to order.</p>
-      </div>
-
-      <div class="card">
-        <img src="cake-icon.png">
-        <h3>Fresh Pastries</h3>
-        <p>Daily baked pastries and cakes — the perfect companion to your coffee.</p>
-      </div>
-
-      <div class="card">
-        <img src="event-icon.png">
-        <h3>Community Events</h3>
-        <p>Cozy space for small events, study groups, and meetups.</p>
-      </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>&copy; <?php echo date('Y'); ?> Cup Of Comfort — All rights reserved.</p>
-    </footer>
-
-  </main>
-
-</body>
-</html>
-
-
+  }
+    </style>
